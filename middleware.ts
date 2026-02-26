@@ -27,9 +27,12 @@ export async function middleware(request: NextRequest) {
 
             if (accessToken) {
                 // Verify the token is not expired by checking exp claim in JWT payload
-                const payload = JSON.parse(
-                    Buffer.from(accessToken.split('.')[1], 'base64').toString()
-                )
+                // Use atob() — Buffer is not available in the Edge Runtime
+                // JWT uses base64url (no padding), so we must pad it for atob()
+                const base64Url = accessToken.split('.')[1]
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
+                const padded = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=')
+                const payload = JSON.parse(atob(padded))
                 isAuthenticated = payload.exp * 1000 > Date.now()
             }
         } catch {
