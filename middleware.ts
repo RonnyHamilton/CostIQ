@@ -1,4 +1,3 @@
-import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
@@ -8,37 +7,43 @@ export async function middleware(request: NextRequest) {
         },
     })
 
-    const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-        {
-            cookies: {
-                getAll() {
-                    return request.cookies.getAll()
-                },
-                setAll(cookiesToSet) {
-                    cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
-                    response = NextResponse.next({
-                        request,
-                    })
-                    cookiesToSet.forEach(({ name, value, options }) =>
-                        response.cookies.set(name, value, options)
-                    )
-                },
-            },
+    // Read the Supabase session token directly from cookies
+    // This avoids using @supabase/ssr which bundles Node.js-only modules
+    // incompatible with the Vercel Edge Runtime
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+    // Extract the access token from the Supabase auth cookie
+    // Supabase stores the session in a cookie named `sb-<project-ref>-auth-token`
+    const cookieName = `sb-${new URL(supabaseUrl).hostname.split('.')[0]}-auth-token`
+    const authCookie = request.cookies.get(cookieName)?.value
+
+    let isAuthenticated = false
+
+    if (authCookie) {
+        try {
+            const session = JSON.parse(authCookie)
+            const accessToken = Array.isArray(session) ? session[0] : session?.access_token
+
+            if (accessToken) {
+                // Verify the token is not expired by checking exp claim in JWT payload
+                const payload = JSON.parse(
+                    Buffer.from(accessToken.split('.')[1], 'base64').toString()
+                )
+                isAuthenticated = payload.exp * 1000 > Date.now()
+            }
+        } catch {
+            isAuthenticated = false
         }
-    )
+    }
 
-    const {
-        data: { user },
-    } = await supabase.auth.getUser()
+    const { pathname } = request.nextUrl
+    const isPublicPath =
+        pathname === '/' ||
+        pathname.startsWith('/login') ||
+        pathname.startsWith('/auth')
 
-    if (
-        !user &&
-        request.nextUrl.pathname !== '/' &&
-        !request.nextUrl.pathname.startsWith('/login') &&
-        !request.nextUrl.pathname.startsWith('/auth')
-    ) {
+    if (!isAuthenticated && !isPublicPath) {
         const url = request.nextUrl.clone()
         url.pathname = '/login'
         return NextResponse.redirect(url)
@@ -55,8 +60,8 @@ export const config = {
          * - _next/image (image optimization files)
          * - favicon.ico (favicon file)
          * - images - .svg, .png, .jpg, .jpeg, .gif, .webp
-         * Feel free to modify this pattern to include more paths.
          */
         '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
     ],
 }
+
