@@ -659,7 +659,7 @@ export default function LandingPage() {
       <Footer />
 
       {/* Marquee animation style */}
-      <style jsx global>{`
+      <style>{`
                 @keyframes marquee {
                     0% { transform: translateX(0); }
                     100% { transform: translateX(-50%); }
