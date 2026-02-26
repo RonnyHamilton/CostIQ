@@ -1,0 +1,40 @@
+⚠ `eslint` configuration in next.config.js is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.js options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\ronny\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.8s
+  Running TypeScript ...
+Failed to compile.
+
+./app/(dashboard)/overview/page.tsx:56:29
+Type error: Type '{ hidden: { opacity: number; y: number; }; visible: { opacity: number; y: number; transition: { duration: number; ease: string; }; }; }' is not assignable to type 'Variants'.
+  Property 'visible' is incompatible with index signature.
+    Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'Variant'.
+      Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type 'TargetAndTransition'.
+        Type '{ opacity: number; y: number; transition: { duration: number; ease: string; }; }' is not assignable to type '{ transition?: Transition<any> | undefined; transitionEnd?: ResolvedValues$1 | undefined; }'.
+          Types of property 'transition' are incompatible.
+            Type '{ duration: number; ease: string; }' is not assignable to type 'Transition<any> | undefined'.
+              Type '{ duration: number; ease: string; }' is not assignable to type 'TransitionWithValueOverrides<any>'.
+                Type '{ duration: number; ease: string; }' is not assignable to type 'ValueAnimationTransition<any>'.
+                  Types of property 'ease' are incompatible.
+                    Type 'string' is not assignable to type 'Easing | Easing[] | undefined'.
+
+[0m [90m 54 |[39m             {[90m/* Row 1: The Hero Metrics (Big & Bold) */[39m}
+ [90m 55 |[39m             [33m<[39m[33mdiv[39m className[33m=[39m[32m"grid grid-cols-1 lg:grid-cols-3 gap-6 h-[280px]"[39m[33m>[39m
+[31m[1m>[22m[39m[90m 56 |[39m                 [33m<[39m[33mmotion[39m[33m.[39mdiv variants[33m=[39m{itemVariants} className[33m=[39m[32m"lg:col-span-2 h-full"[39m[33m>[39m
+ [90m    |[39m                             [31m[1m^[22m[39m
+ [90m 57 |[39m                     [33m<[39m[33mNetVarianceHero[39m
+ [90m 58 |[39m                         totalVariance[33m=[39m{totalVariance}
+ [90m 59 |[39m                         variancePct[33m=[39m{variancePct}[0m
+Next.js build worker exited with code: 1 and signal: null

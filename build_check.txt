@@ -1,0 +1,116 @@
+﻿node.exe : ΓÜá `eslint` configuration in 
+next.config.js is no longer supported. 
+See more info here: https://nextjs.org/doc
+s/app/api-reference/cli/next#next-lint-opt
+ions
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (ΓÜá `eslint` co...xt-lint-options  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+ΓÜá Invalid next.config.js options 
+detected: 
+ΓÜá     Unrecognized key(s) in object: 
+'eslint'
+ΓÜá See more info here: https://nextjs.org
+/docs/messages/invalid-next-config
+ΓÜá Warning: Next.js inferred your 
+workspace root, but it may not be correct.
+ We detected multiple lockfiles and 
+selected the directory of 
+C:\Users\ronny\package-lock.json as the 
+root directory.
+ To silence this warning, set 
+`turbopack.root` in your Next.js config, 
+or consider removing one of the lockfiles 
+if it's not needed.
+   See https://nextjs.org/docs/app/api-ref
+erence/config/next-config-js/turbopack#roo
+t-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\ronny\Desktop\hamilton\hacka
+thon\webify e-horyzon\CostIQ\dashboard\pac
+kage-lock.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Found 1 warning while optimizing 
+generated CSS:
+
+[2mΓöé   }[22m
+[2mΓöé }[22m
+[2mΓöé[22m @import url('https://fonts.go
+ogleapis.com/css2?family=Bitcount+Grid+Sin
+gle:wght@100..900&family=Bungee+Inline&fam
+ily=Hanalei+Fill&family=Martel+Sans:wght@2
+00;300;400;600;700;800;900&family=Montserr
+at:ital,wght@0,100..900;1,100..900&family=
+Outfit:wght@100..900&family=Poppins:ital,w
+ght@0,100;0,200;0,300;0,400;0,500;0,600;0,
+700;0,800;0,900;1,100;1,200;1,300;1,400;1,
+500;1,600;1,700;1,800;1,900&family=Roboto+
+Condensed:ital,wght@0,100..900;1,100..900&
+family=Space+Grotesk:wght@300..700&display
+=swap');
+[2mΓöå[22m        [33m[2m^--[22m 
+@import rules must precede all rules 
+aside from @charset and @layer 
+statements[39m
+[2mΓöå[22m
+[2mΓöé @layer base {[22m
+[2mΓöé   *,[22m
+
+Γ£ô Compiled successfully in 5.3s
+  Running TypeScript ...
+Failed to compile.
+
+./app/(dashboard)/overview/page.tsx:431:41
+Type error: Type '(value: number) => 
+string' is not assignable to type 
+'Formatter<number, NameType> & ((value: 
+number, name: NameType, item: 
+Payload<number, NameType>, index: number, 
+payload: Payload<number, NameType>[]) => 
+ReactNode | [...])'.
+  Type '(value: number) => string' is not 
+assignable to type 'Formatter<number, 
+NameType>'.
+    Types of parameters 'value' and 
+'value' are incompatible.
+      Type 'number | undefined' is not 
+assignable to type 'number'.
+        Type 'undefined' is not 
+assignable to type 'number'.
+
+[0m [90m 429 |[39m                     
+                    
+contentStyle[33m=[39m{tooltipStyle}
+ [90m 430 |[39m                         
+                itemStyle[33m=[39m{{ 
+fontSize[33m:[39m 
+[32m"11px"[39m[33m,[39m 
+color[33m:[39m [32m"#fff"[39m }}
+[31m[1m>[22m[39m[90m 431 |[39m      
+                                   
+formatter[33m=[39m{(value[33m:[39m 
+number) [33m=>[39m 
+formatCurrency(value)}
+ [90m     |[39m                         
+                [31m[1m^[22m[39m
+ [90m 432 |[39m                         
+            [33m/[39m[33m>[39m
+ [90m 433 |[39m                         
+            [33m<[39m[33mLegend[39m
+ [90m 434 |[39m                         
+                verticalAlign[33m=[39m[
+32m"bottom"[39m[0m
+Next.js build worker exited with code: 1 
+and signal: null

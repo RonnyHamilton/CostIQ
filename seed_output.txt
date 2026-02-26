@@ -1,0 +1,37 @@
+﻿≡ƒî▒ CostIQ Database Seeder
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+
+≡ƒùæ∩╕Å  Cleaning existing data...
+  Γ£ô actual_consumptions cleared
+  Γ£ô bom_items cleared
+  Γ£ô orders cleared
+  Γ£ô inventory_items cleared
+  Γ£ô material_inventory cleared
+  Γ£ô production_logs cleared
+
+≡ƒôª Seeding orders...
+  Γ£ô 8 orders inserted
+
+≡ƒôï Seeding BOM items...
+  Γ£ô 30 BOM items inserted
+
+≡ƒÆ░ Seeding actual consumptions...
+  Γ£ô 32 consumption records inserted
+
+≡ƒôª Seeding inventory items...
+  Γ£ô 15 inventory items inserted
+
+≡ƒö¼ Seeding material inventory...
+node :   Γ£ù material_inventory: new row 
+violates row-level security policy for 
+table "material_inventory"
+At line:1 char:1
++ node supabase/seed.mjs 2>&1 | Out-File 
+-FilePath seed_output.txt -Enc ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (  Γ£ù material_...rial_inventory"  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 

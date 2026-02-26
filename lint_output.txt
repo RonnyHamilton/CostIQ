@@ -1,0 +1,68 @@
+﻿
+> dashboard@0.1.0 lint
+> eslint
+
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\app\(dashboard)\inventory\page.tsx
+  16:60  warning  'X' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\app\layout.tsx
+  26:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\app\login\page.tsx
+  226:21  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\dashboard\ActivityTimeline.tsx
+   7:5   warning  'AlertTriangle' is defined but never used  @typescript-eslint/no-unused-vars
+   8:5   warning  'CheckCircle2' is defined but never used   @typescript-eslint/no-unused-vars
+  14:10  warning  'Card' is defined but never used           @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\dashboard\InventoryScroller.tsx
+  4:25  warning  'Package' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\dashboard\NetVarianceHero.tsx
+   4:36  warning  'DollarSign' is defined but never used           @typescript-eslint/no-unused-vars
+  15:11  warning  'isPositive' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\dashboard\StockoutGauge.tsx
+  3:52  warning  'Tooltip' is defined but never used        @typescript-eslint/no-unused-vars
+  5:10  warning  'AlertTriangle' is defined but never used  @typescript-eslint/no-unused-vars
+  5:25  warning  'CheckCircle2' is defined but never used   @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\dashboard\TitanCharts.tsx
+  18:10  warning  'formatCurrency' is defined but never used  @typescript-eslint/no-unused-vars
+  23:11  error    Unexpected any. Specify a different type    @typescript-eslint/no-explicit-any
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\dashboard\TitanMRPTable.tsx
+  3:10  warning  'Badge' is defined but never used         @typescript-eslint/no-unused-vars
+  6:22  warning  'AlertCircle' is defined but never used   @typescript-eslint/no-unused-vars
+  6:35  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\dashboard\TitanWidgets.tsx
+   4:40  warning  'TrendingUp' is defined but never used     @typescript-eslint/no-unused-vars
+   4:52  warning  'AlertTriangle' is defined but never used  @typescript-eslint/no-unused-vars
+  13:5   warning  'Tooltip' is defined but never used        @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\layout\SearchPalette.tsx
+  13:5  warning  'X' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\layout\TopNav.tsx
+  16:5   warning  'ChevronDown' is defined but never used        @typescript-eslint/no-unused-vars
+  46:11  warning  'userName' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\components\ui\Modal.tsx
+  3:29  warning  'useState' is defined but never used      @typescript-eslint/no-unused-vars
+  4:10  warning  'createPortal' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\lib\queries\useInventory.ts
+  1:20  warning  'useMutation' is defined but never used     @typescript-eslint/no-unused-vars
+  1:33  warning  'useQueryClient' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\supabase\seed.mjs
+  159:11  warning  'now' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ronny\Desktop\hamilton\hackathon\webify e-horyzon\CostIQ\dashboard\utils\supabase\middleware.ts
+  20:58  warning  'options' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 29 problems (2 errors, 27 warnings)
+
