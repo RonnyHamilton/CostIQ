@@ -20,22 +20,10 @@ CostIQ helps manufacturers monitor production costs, predict material shortages,
 # 🚀 Demo
 
 Live Demo  
-https://your-demo-link.com
+[https://your-demo-link.com](https://cost-iq-chi.vercel.app/)
 
 ---
 
-# 📸 Product Preview
-
-### Dashboard Overview
-<img src="docs/dashboard.png" />
-
-### Cost Variance Analytics
-<img src="docs/variance.png" />
-
-### Stockout Prediction
-<img src="docs/stockout.png" />
-
----
 
 # 🧠 Problem
 
